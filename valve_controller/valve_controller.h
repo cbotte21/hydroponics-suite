@@ -3,8 +3,6 @@
 
 #include <cstdio>
 #include "pico/stdlib.h"
-#include "hardware/pio.h"
-#include "valve_controller.pio.h"
 
 #include <string>
 #include <vector>

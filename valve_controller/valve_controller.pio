@@ -16,7 +16,7 @@ loop:
 
 % c-sdk {
 static inline void valve_controller_init(PIO pio, uint sm, uint offset, uint pin) {
-    pio_sm_config c = valve_controller_get_default_config(offset);
+    pio_sm_config c = valve_controller_program_get_default_config(offset);
 
     // Map the state machine's OUT pin group to one pin, namely the `pin`
     // parameter to this function.

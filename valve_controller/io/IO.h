@@ -5,6 +5,10 @@
 #ifndef HYDROPONIC_SUITE_IO_H
 #define HYDROPONIC_SUITE_IO_H
 
+
+#include "hardware/pio.h"
+#include "valve_controller.pio.h"
+
 #include "../valve_controller.h"
 
 class IO {
