@@ -14,7 +14,7 @@ const int WATERING_LENGTH = 20;
 int main() {
     stdio_init_all();
 
-    std::vector<AnalogIO> controllers;
+    std::vector<AnalogOutput> controllers;
     //Initialize I/O
     for (int i = 0; i < VALVE_CONT; i++) {
         controllers.emplace_back(i, false);

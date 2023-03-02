@@ -7,6 +7,6 @@
 #include <string>
 #include <vector>
 
-#include "io/AnalogIO.h"
+#include "io/AnalogOutput.h"
 
 #endif

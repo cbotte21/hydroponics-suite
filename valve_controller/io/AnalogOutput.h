@@ -2,19 +2,17 @@
 // Created by cbotte21 on 2/23/23.
 //
 
-#ifndef HYDROPONIC_SUITE_ANALOGIO_H
-#define HYDROPONIC_SUITE_ANALOGIO_H
+#ifndef HYDROPONIC_SUITE_ANALOGOUTPUT_H
+#define HYDROPONIC_SUITE_ANALOGOUTPUT_H
 
 #include "../valve_controller.h"
 #include "IO.h"
 
-//TODO: Change to AnalogOutput
-
-class AnalogIO : public IO {
+class AnalogOutput : public IO {
 public:
     //Constructors
-    explicit AnalogIO(uint pin);
-    AnalogIO(uint pin, bool state);
+    explicit AnalogOutput(uint pin);
+    AnalogOutput(uint pin, bool state);
 
     //Accessors
     inline bool state() const {
@@ -31,4 +29,4 @@ public:
 };
 
 
-#endif //HYDROPONIC_SUITE_ANALOGIO_H
+#endif //HYDROPONIC_SUITE_ANALOGOUTPUT_H

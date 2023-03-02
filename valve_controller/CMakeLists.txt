@@ -5,11 +5,14 @@ if (TARGET tinyusb_device)
 
     target_sources(valve_controller PRIVATE
             valve_controller.cpp
-            io/AnalogIO.cpp
+            io/AnalogOutput.cpp
             )
 
     # pull in common dependencies
-    target_link_libraries(valve_controller pico_stdlib hardware_pio)
+    target_link_libraries(valve_controller
+            pico_stdlib
+            hardware_pio
+            )
 
     # enable usb output, disable uart output
     pico_enable_stdio_usb(valve_controller 1)
