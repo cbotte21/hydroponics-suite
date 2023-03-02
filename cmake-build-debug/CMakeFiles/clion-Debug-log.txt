@@ -1,0 +1,17 @@
+/home/cbotte21/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/cbotte21/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/ninja/linux/x64/ninja -G Ninja -S /home/cbotte21/CLionProjects/hydroponic_suite -B /home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-debug
+PICO_SDK_PATH is /home/cbotte21/Documents/pico-sdk
+PICO platform is rp2040.
+Build type is Debug
+Using regular optimized debug build (set PICO_DEOPTIMIZED_DEBUG=1 to de-optimize)
+PICO target board is pico.
+Using board configuration from /home/cbotte21/Documents/pico-sdk/src/boards/include/boards/pico.h
+TinyUSB available at /home/cbotte21/Documents/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+Compiling TinyUSB with CFG_TUSB_DEBUG=1
+BTstack available at /home/cbotte21/Documents/pico-sdk/lib/btstack
+cyw43-driver available at /home/cbotte21/Documents/pico-sdk/lib/cyw43-driver
+Pico W Bluetooth build support available.
+lwIP available at /home/cbotte21/Documents/pico-sdk/lib/lwip
+mbedtls available at /home/cbotte21/Documents/pico-sdk/lib/mbedtls
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-debug

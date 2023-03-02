@@ -1,0 +1,5 @@
+/home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-release/elf2uf2/CMakeFiles/elf2uf2.dir
+/home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-release/elf2uf2/CMakeFiles/edit_cache.dir
+/home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-release/elf2uf2/CMakeFiles/rebuild_cache.dir
+/home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-release/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
+/home/cbotte21/CLionProjects/hydroponic_suite/cmake-build-release/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir

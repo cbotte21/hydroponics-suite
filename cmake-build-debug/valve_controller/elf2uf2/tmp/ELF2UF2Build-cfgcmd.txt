@@ -1,0 +1,1 @@
+cmd='/home/cbotte21/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/linux/x64/bin/cmake;-DCMAKE_MAKE_PROGRAM:FILEPATH=/home/cbotte21/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/ninja/linux/x64/ninja;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

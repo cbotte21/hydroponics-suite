@@ -1,0 +1,5 @@
+set(HYDROPONIC_SUITE_URL_BASE "https://github.com/cbotte21/hydroponic-suite")
+macro(hydroponic_suite_auto_set_url TARGET)
+    file(RELATIVE_PATH URL_REL_PATH "${HYDROPONIC_SUITE_PATH}" "${CMAKE_CURRENT_LIST_DIR}")
+    pico_set_program_url(${TARGET} "${HYDROPONIC_SUITE_URL_BASE}/${URL_REL_PATH}")
+endmacro()
