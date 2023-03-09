@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
-#include "io/TimedOutput.h"
+#include "controllers/ValveController.h"
+#include "controllers/LightController.h"
 
 #endif

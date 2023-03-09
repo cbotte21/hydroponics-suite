@@ -15,10 +15,18 @@ public:
     }
 
     //Cycle enables a positive output to a desired pin for a selected duration
-    inline void cycle() {
+    void cycle() {
         this->set(true);
         sleep_ms(duration_seconds*1000);
         this->set(false);
+    }
+
+    inline void setDuration(uint seconds) {
+        this->duration_seconds = seconds;
+    }
+
+    inline uint getDuration() const {
+        return duration_seconds;
     }
 };
 

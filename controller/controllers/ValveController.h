@@ -5,9 +5,14 @@
 #ifndef HYDROPONIC_SUITE_VALVECONTROLLER_H
 #define HYDROPONIC_SUITE_VALVECONTROLLER_H
 
+#include <utility>
 
-class ValveController {
+#include "../io/TimedOutput.h"
+#include "../internal/Plant.h"
 
+class ValveController : public TimedOutput {
+public:
+    ValveController(uint pin, const Plant& plant) : TimedOutput(pin, plant.watering_duration) {}
 };
 
 

@@ -3,3 +3,8 @@
 //
 
 #include "LightController.h"
+
+// Tick compares current time to time interval. If within interval, pin high, else low.
+void LightController::tick() {
+
+}
