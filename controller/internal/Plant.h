@@ -14,7 +14,7 @@ public:
     std::string uuid;
     std::string name;
     uint started; //Timestamp
-    uint watering_duration; //Seconds to set pin to HIGH.
+    uint water_quarts_daily; //Seconds to set pin to HIGH.
 };
 
 

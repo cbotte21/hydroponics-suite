@@ -11,9 +11,14 @@
 #include "../internal/Plant.h"
 
 class ValveController : public TimedOutput {
+    Plant plant;
 public:
-    ValveController(uint pin, const Plant& plant) : TimedOutput(pin, plant.watering_duration) {}
+    ValveController(uint pin, const Plant& plant) : TimedOutput(pin) {
+        this->plant = plant;
+    }
+    Plant getPlant() const {
+        return plant;
+    }
 };
-
 
 #endif //HYDROPONIC_SUITE_VALVECONTROLLER_H

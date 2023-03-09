@@ -8,9 +8,12 @@
 #include "AnalogOutput.h"
 
 class TimedOutput : public AnalogOutput {
-    uint duration_seconds;
+    double duration_seconds;
 public:
-    TimedOutput(uint pin, uint duration_seconds) : AnalogOutput(pin) {
+    explicit TimedOutput(uint pin) : AnalogOutput(pin) {
+        this->duration_seconds = 0;
+    }
+    TimedOutput(uint pin, double duration_seconds) : AnalogOutput(pin) {
         this->duration_seconds = duration_seconds;
     }
 
@@ -21,11 +24,11 @@ public:
         this->set(false);
     }
 
-    inline void setDuration(uint seconds) {
+    inline void setDuration(double seconds) {
         this->duration_seconds = seconds;
     }
 
-    inline uint getDuration() const {
+    inline double getDuration() const {
         return duration_seconds;
     }
 };

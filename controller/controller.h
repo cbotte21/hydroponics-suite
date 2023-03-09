@@ -9,5 +9,6 @@
 
 #include "controllers/ValveController.h"
 #include "controllers/LightController.h"
+#include "internal/CycleCalculator.h"
 
 #endif

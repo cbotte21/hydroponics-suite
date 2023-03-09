@@ -13,9 +13,11 @@
  *  - Can OR all valve controller output for a water pump enable.
  */
 
+const uint cyclesHourly = 20;
+const double hourlyFlowrate = 10;
+
 //If WATERING_INTERVAL < (WATERING_LENGTH*VALVE_COUNT) -> INFINITE WATERING LOOP
-const int VALVE_CONT = 2;
-const int WATERING_INTERVAL = 60; //Seconds between water cycle
+const int VALVE_COUNT = 2;
 
 //Lighting Controls
 const int LIGHT_PIN = 5;
@@ -28,11 +30,21 @@ int main() {
     //TODO: Write data from programming if could connect.
     //TODO: Use insertion operator for loading data.
 
+    uint totalDailyQuarts = 0;
+
     //Initialize I/O
     std::vector<ValveController> controllers;
     LightController lightController(LIGHT_PIN, LIGHT_INTERVAL);
-    for (int i = 0; i < VALVE_CONT; i++) { //TODO: Implement data for blacklisted pins, if necessary.
-        controllers.emplace_back(i, Plant());
+    for (int i = 0; i < VALVE_COUNT; i++) { //TODO: Implement data for blacklisted pins, if necessary.
+        Plant plant;
+        controllers.emplace_back(i, plant);
+        totalDailyQuarts += plant.water_quarts_daily;
+    }
+
+    //Set duration times
+    CycleCalculator cycleCalculator(hourlyFlowrate, totalDailyQuarts, cyclesHourly);
+    for (int i = 0; i < VALVE_COUNT; i++) {
+        controllers[i].setDuration(cycleCalculator.wateringLengthSeconds(controllers[i].getPlant()));
     }
 
     //Main Loop
@@ -47,6 +59,6 @@ int main() {
         //Handle lights
         lightController.tick();
 
-        sleep_ms(WATERING_INTERVAL*1000);
+        sleep_ms(cycleCalculator.delayIntervalSeconds()*1000);
     }
 }
