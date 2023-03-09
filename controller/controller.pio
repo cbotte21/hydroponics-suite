@@ -4,7 +4,7 @@
 ; SPDX-License-Identifier: BSD-3-Clause
 ;
 
-.program valve_controller
+.program controller
 
 ; Repeatedly get one word of data from the TX FIFO, stalling when the FIFO is
 ; empty. Write the least significant bit to the OUT pin group.
@@ -15,8 +15,8 @@ loop:
     jmp loop
 
 % c-sdk {
-static inline void valve_controller_init(PIO pio, uint sm, uint offset, uint pin) {
-    pio_sm_config c = valve_controller_program_get_default_config(offset);
+static inline void controller_init(PIO pio, uint sm, uint offset, uint pin) {
+    pio_sm_config c = controller_program_get_default_config(offset);
 
     // Map the state machine's OUT pin group to one pin, namely the `pin`
     // parameter to this function.

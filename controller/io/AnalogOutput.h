@@ -5,14 +5,16 @@
 #ifndef HYDROPONIC_SUITE_ANALOGOUTPUT_H
 #define HYDROPONIC_SUITE_ANALOGOUTPUT_H
 
-#include "../valve_controller.h"
+#include "../controller.h"
 #include "IO.h"
 
 class AnalogOutput : public IO {
 public:
     //Constructors
-    explicit AnalogOutput(uint pin);
-    AnalogOutput(uint pin, bool state);
+    explicit AnalogOutput(uint pin) : IO(pin) {}
+    AnalogOutput(uint pin, bool state) : AnalogOutput(pin) {
+        set(state);
+    }
 
     //Accessors
     inline bool state() const {

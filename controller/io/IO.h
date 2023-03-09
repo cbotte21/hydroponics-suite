@@ -7,9 +7,9 @@
 
 
 #include "hardware/pio.h"
-#include "valve_controller.pio.h"
+#include "controller.pio.h"
 
-#include "../valve_controller.h"
+#include "../controller.h"
 
 class IO {
     uint pin;

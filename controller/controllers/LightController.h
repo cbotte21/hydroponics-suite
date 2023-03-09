@@ -1,0 +1,14 @@
+//
+// Created by cbotte21 on 3/9/23.
+//
+
+#ifndef HYDROPONIC_SUITE_LIGHTCONTROLLER_H
+#define HYDROPONIC_SUITE_LIGHTCONTROLLER_H
+
+
+class LightController {
+
+};
+
+
+#endif //HYDROPONIC_SUITE_LIGHTCONTROLLER_H

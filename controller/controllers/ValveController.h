@@ -1,0 +1,14 @@
+//
+// Created by cbotte21 on 3/9/23.
+//
+
+#ifndef HYDROPONIC_SUITE_VALVECONTROLLER_H
+#define HYDROPONIC_SUITE_VALVECONTROLLER_H
+
+
+class ValveController {
+
+};
+
+
+#endif //HYDROPONIC_SUITE_VALVECONTROLLER_H

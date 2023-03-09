@@ -25,4 +25,4 @@ add_compile_options(-Wall
         )
 
 
-add_subdirectory(valve_controller)
+add_subdirectory(controller)
