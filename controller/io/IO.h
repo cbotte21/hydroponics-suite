@@ -12,7 +12,7 @@
 #include "../controller.h"
 
 class IO {
-    uint pin;
+    uint pin{};
 public:
     //Constructors
     explicit IO(uint pin) {
@@ -20,8 +20,15 @@ public:
         this->pin = pin;
     }
 
+    IO() = default;
+
     uint getPin() const {
         return pin;
+    }
+
+    inline void setPin(uint p) {
+        gpio_init(p);
+        pin = p;
     }
 };
 

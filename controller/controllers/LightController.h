@@ -10,10 +10,9 @@
 class LightController : public AnalogOutput {
     std::vector<std::pair<uint, uint>> light_high_intervals;
 public:
-    LightController(uint pin, std::vector<std::pair<uint, uint>> light_high_intervals) : AnalogOutput(pin) {
-        this->light_high_intervals = light_high_intervals;
-    }
+    explicit LightController() : AnalogOutput() {}
     void tick();
+    friend std::istream& operator >> (std::istream& in, LightController& lightController); //Load time intervals and pin
 };
 
 #endif //HYDROPONIC_SUITE_LIGHTCONTROLLER_H

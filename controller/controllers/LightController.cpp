@@ -8,3 +8,7 @@
 void LightController::tick() {
 
 }
+
+std::istream &operator >> (std::istream &in, LightController &lightController) {
+    return in;
+}

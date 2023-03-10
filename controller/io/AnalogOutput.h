@@ -12,6 +12,7 @@ class AnalogOutput : public IO {
 public:
     //Constructors
     explicit AnalogOutput(uint pin) : IO(pin) {}
+    AnalogOutput() : IO() {}
     AnalogOutput(uint pin, bool state) : AnalogOutput(pin) {
         set(state);
     }

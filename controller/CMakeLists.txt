@@ -10,6 +10,9 @@ if (TARGET tinyusb_device)
             io/TimedOutput.cpp
             controllers/LightController.cpp
             controllers/ValveController.cpp
+            internal/CycleCalculator.cpp
+            internal/Plant.cpp
+            internal/ValveManager.cpp
             )
 
     # pull in common dependencies
