@@ -1,12 +1,15 @@
 # hydroponics-suite
-A fully automated hydroponic farming controller suite.
+An automated hydroponics microcontroller.
 # Project setup
  - Clone github repository
  - Open folder in CLion
 - Add cmake enviroment variebles:
    - DPICO_BOARD=pico_w
    - PICO_SDK_PATH={directory of sdk}
-# Goals
- - Connect controller to companion app
- - Transmit interval and watering length from companion
- - Allow companion to download / create presets from bank 
+# Plans
+ - Create a programmer application. Runs off tcp and can transmit config options to PICO.
+ - Implement LightController.
+ - Upload build photos
+ # Key points
+ - To maintain steady water pressure, and accurate water deployments, valves are open sequantually.
+ - Uses water pressure, tubing size, and time to calculate watering of plants.
