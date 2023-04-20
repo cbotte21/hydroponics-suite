@@ -46,7 +46,7 @@ int main() {
         printf("Water cycle ended!\n");
 
         //Handle lights
-        lightController.tick();
+        lightController.tick();  // TODO: Should be moved to a second thread
 
         sleep_ms(valveManager.getSleepSeconds()*1000);
     }

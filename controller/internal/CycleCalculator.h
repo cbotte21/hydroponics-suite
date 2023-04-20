@@ -9,15 +9,16 @@
 
 class CycleCalculator {
     double flowrateHourly;
-    double quartsHourly;
+    double quartsUsedHourly;
     uint cyclesHourly;
 
     double cycleActiveMinutesHourly();
     double cycleLowMinutesHourly();
 public:
-    CycleCalculator(double flowrateHourly, uint quartsDaily, uint cyclesHourly) {
+    CycleCalculator() {}
+    CycleCalculator(double flowrateHourly, uint quartsUsedHourly, uint cyclesHourly) {
         this->flowrateHourly = flowrateHourly;
-        this->quartsHourly = quartsDaily/24.0;
+        this->quartsUsedHourly = quartsUsedHourly;
         this->cyclesHourly = cyclesHourly;
     }
 

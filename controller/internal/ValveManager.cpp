@@ -13,7 +13,9 @@ double ValveManager::getTotalQuartsDaily() {
 }
 
 void ValveManager::cycle() {
-
+  //OPEN SOLENOID
+  //SLEEP
+  //CLOSE SOLENOID
 }
 
 std::istream& operator >> (std::istream& in, ValveManager& valveManager) {
@@ -28,10 +30,10 @@ std::istream& operator >> (std::istream& in, ValveManager& valveManager) {
         controllers[i].setDuration(cycleCalculator.wateringLengthSeconds(controllers[i].getPlant()));
     }
  */
-    valveManager.cycleCalculator = new CycleCalculator(valveManager.flowrateHourly, valveManager.getTotalQuartsDaily(), valveManager.cyclesHourly);
+    valveManager.cycleCalculator = new CycleCalculator(valveManager.flowrateQuartsHourly, valveManager.getTotalQuartsDaily(), valveManager.cyclesHourly);
 }
 
-ValveManager::ValveManager(double flowrateHourly, uint cyclesHourly) {
-    this->flowrateHourly = flowrateHourly;
+ValveManager::ValveManager(double flowrateQuartsHourly, uint cyclesHourly) {
+    this->flowrateQuartsHourly = flowrateQuartsHourly;
     this->cyclesHourly = cyclesHourly;
 }

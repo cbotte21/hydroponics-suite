@@ -9,12 +9,14 @@
 #include "../controllers/ValveController.h"
 #include "CycleCalculator.h"
 
+// TODO: Should be renamed to IrrigationManager
+
 class ValveManager {
-    CycleCalculator* cycleCalculator = nullptr;
-    double flowrateHourly = 0;
+    CycleCalculator* cycleCalculator = nullptr;  // Pointer to lazily-lazy init.... Eventually make setters and a default constructor
+    double flowrateQuartsHourly = 0;
     uint cyclesHourly = 0;
     std::vector<ValveController> controllers;
-    double getTotalQuartsDaily(); //Statistics needed for watering interval calculation
+    double getTotalQuartsDaily();  // Statistics needed for watering interval calculation
 public:
     ValveManager(double flowrateHourly, uint cyclesHourly);
     void cycle();
@@ -24,4 +26,4 @@ public:
     friend std::istream& operator >> (std::istream& in, ValveManager& valveManager);
 };
 
-#endif //HYDROPONIC_SUITE_VALVEMANAGER_H
+#endif  // HYDROPONIC_SUITE_VALVEMANAGER_H
