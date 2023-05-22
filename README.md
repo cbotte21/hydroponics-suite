@@ -3,8 +3,9 @@ An automated hydroponics microcontroller.
 # Project setup
  - Clone github repository
  - Open folder in CLion
-- Add cmake enviroment variebles:
+- Add cmake options:
    - DPICO_BOARD=pico_w
+- Add enviroment variables:
    - PICO_SDK_PATH={directory of sdk}
 # Plans
  - Create a programmer application. Runs off tcp and can transmit config options to PICO.
