@@ -6,6 +6,7 @@
 #define HYDROPONIC_SUITE_TIMEDOUTPUT_H
 
 #include "AnalogOutput.h"
+#include "pico/stdlib.h"
 
 class TimedOutput : public AnalogOutput {
     double duration_seconds;
@@ -20,7 +21,7 @@ public:
     //Cycle enables a positive output to a desired pin for a selected duration
     void cycle() {
         this->set(true);
-        sleep_ms(duration_seconds*1000);
+        sleep_ms((uint32_t)duration_seconds*1000);
         this->set(false);
     }
 

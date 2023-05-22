@@ -1,10 +1,12 @@
 #include "controller.h"
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 /*
  * Author: Cody Botte
  *
  * TODO:
- *  - Light controller should be on a seperate thread
+ *  - Light controller should be on a separate thread
  *  - Connect to a wireless programmer
  *
  * Notes:
@@ -23,31 +25,29 @@
  *          - Sleep
  */
 
-const uint cyclesHourly = 20;
-const double hourlyFlowrate = 10;
+const uint SECONDS_TO_MS = 1000;
+const double secondsForQuart = 20;
+
+void lightManagerCore() {
+    LightController lightController;
+    while (true) {
+      lightController.tick();
+    }
+}
 
 int main() {
     stdio_init_all();
 
-    //Initialize I/O controllers
-    ValveManager valveManager(hourlyFlowrate, cyclesHourly);
-    LightController lightController;
+    // Initialize LightManager core
+    multicore_launch_core1(lightManagerCore);
 
-    //TODO: Write data from programming if could connect.
-    //TODO: Populate data from files, if exists.
-    //valvedata >> valveManager;
-    //lightdata >> lightController; set pin valveCount+1
+    // Initialize I/O controllers
+    IrrigationManager irrigationManager(secondsForQuart);
 
-    //Main Loop
+    // Main Loop
     while (true) {
-        //Handle controllers
-        printf("Water cycle started!\n");
-        valveManager.cycle();
-        printf("Water cycle ended!\n");
-
-        //Handle lights
-        lightController.tick();  // TODO: Should be moved to a second thread
-
-        sleep_ms(valveManager.getSleepSeconds()*1000);
+        //Handle irrigation
+        irrigationManager.cycle();
     }
 }
+#pragma clang diagnostic pop

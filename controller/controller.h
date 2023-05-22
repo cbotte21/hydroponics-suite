@@ -3,8 +3,9 @@
 
 #include <cstdio>
 #include "pico/stdlib.h"
+#include "pico/multicore.h"
 
-#include "internal/ValveManager.h"
-#include "controllers/LightController.h"
+#include "internal/IrrigationManager.h"
+#include "io/LightController.h"
 
 #endif

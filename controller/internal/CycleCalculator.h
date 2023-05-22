@@ -5,26 +5,29 @@
 #ifndef HYDROPONIC_SUITE_CYCLECALCULATOR_H
 #define HYDROPONIC_SUITE_CYCLECALCULATOR_H
 
-#include "../controller.h"
+#include "Plant.h"
+
+/*
+ *  At the current state, plants will water once per hour,
+ *  Should eventually involve a predefined amount of cycles per hour.
+ */
 
 class CycleCalculator {
-    double flowrateHourly;
+    double secondsForQuart;
     double quartsUsedHourly;
-    uint cyclesHourly;
 
-    double cycleActiveMinutesHourly();
-    double cycleLowMinutesHourly();
-public:
-    CycleCalculator() {}
-    CycleCalculator(double flowrateHourly, uint quartsUsedHourly, uint cyclesHourly) {
-        this->flowrateHourly = flowrateHourly;
-        this->quartsUsedHourly = quartsUsedHourly;
-        this->cyclesHourly = cyclesHourly;
+    [[nodiscard]] inline double percentageOfWaterflow(const Plant& plant) const {
+      return plant.getQuartsDaily()/24/quartsUsedHourly;
     }
 
-    double wateringLengthSeconds(Plant plant);
-    double delayIntervalSeconds();
-};
+public:
+    CycleCalculator(double secondsForQuart, double quartsUsedHourly) {
+        this->secondsForQuart = secondsForQuart;
+        this->quartsUsedHourly = quartsUsedHourly;
+    }
 
+    [[nodiscard]] double wateringIntervalSeconds(const Plant& plant) const;
+    [[nodiscard]] double delayIntervalSeconds(const Plant& plant) const;
+};
 
 #endif //HYDROPONIC_SUITE_CYCLECALCULATOR_H

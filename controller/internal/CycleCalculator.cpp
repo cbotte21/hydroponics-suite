@@ -4,21 +4,16 @@
 
 #include "CycleCalculator.h"
 
-double CycleCalculator::cycleActiveMinutesHourly() {
-    return quartsHourly/flowrateHourly*60;
+const int SECONDS_PER_HOUR = 60*60;
+const int CYCLES_PER_HOUR = 10;
+
+double CycleCalculator::wateringIntervalSeconds(const Plant& plant) const {
+    double plantQuartsHourly = plant.getQuartsDaily() / 24.0;  // Quarts per hour needed for plant
+    return plantQuartsHourly*  secondsForQuart / CYCLES_PER_HOUR;  // TODO: Should incorporate cycles per hour
 }
 
-double CycleCalculator::cycleLowMinutesHourly() {
-    return 60 - cycleActiveMinutesHourly();
-}
-
-double CycleCalculator::wateringLengthSeconds(Plant plant) {
-    double plantQuartsHourly = plant.water_quarts_daily/24.0;
-    double minutesPlantActiveHour = cycleActiveMinutesHourly()*plantQuartsHourly/quartsHourly;
-    double cycleTimeMinutes = minutesPlantActiveHour/cyclesHourly;
-    return cycleTimeMinutes/flowrateHourly; //*60/60 cancels
-}
-
-double CycleCalculator::delayIntervalSeconds() {
-    return 0;
+double CycleCalculator::delayIntervalSeconds(const Plant& plant) const {
+    double totalActiveSecondsHourly = quartsUsedHourly * secondsForQuart;
+    double totalLowSecondsHourly = SECONDS_PER_HOUR - totalActiveSecondsHourly;
+    return totalLowSecondsHourly * percentageOfWaterflow(plant) / CYCLES_PER_HOUR;  // Should be a way to event distribute sleep time
 }

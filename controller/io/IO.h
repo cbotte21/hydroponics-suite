@@ -9,8 +9,6 @@
 #include "hardware/pio.h"
 #include "controller.pio.h"
 
-#include "../controller.h"
-
 class IO {
     uint pin{};
 public:

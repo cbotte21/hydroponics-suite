@@ -7,17 +7,17 @@
 
 #include <utility>
 
-#include "../io/TimedOutput.h"
+#include "TimedOutput.h"
 #include "../internal/Plant.h"
 
 class ValveController : public TimedOutput {
-    Plant plant;
+    const Plant* plant;
 public:
-    ValveController(uint pin, const Plant& plant) : TimedOutput(pin) {
+    ValveController(uint pin, const Plant* plant) : TimedOutput(pin) {
         this->plant = plant;
     }
-    Plant getPlant() const {
-        return plant;
+    [[nodiscard]] Plant getPlant() const {
+        return *plant;
     }
 };
 

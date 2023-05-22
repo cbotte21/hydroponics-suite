@@ -7,18 +7,20 @@ if (TARGET tinyusb_device)
             controller.cpp
             io/IO.h
             io/AnalogOutput.h
-            io/TimedOutput.cpp
-            controllers/LightController.cpp
-            controllers/ValveController.cpp
+            io/TimedOutput.h
+            io/LightController.cpp
+            io/ValveController.h
             internal/CycleCalculator.cpp
-            internal/Plant.cpp
-            internal/ValveManager.cpp
+            internal/Plant.h
+            internal/IrrigationManager.cpp
             )
 
     # pull in common dependencies
     target_link_libraries(controller
             pico_stdlib
             hardware_pio
+            pico_multicore
+            pico_unique_id
             )
 
     # enable usb output, disable uart output

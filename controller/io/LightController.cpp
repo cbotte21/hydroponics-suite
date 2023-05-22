@@ -3,12 +3,9 @@
 //
 
 #include "LightController.h"
+#include "pico/stdlib.h"
 
 // Tick compares current time to time interval. If within interval, pin high, else low.
 void LightController::tick() {
-
-}
-
-std::istream &operator >> (std::istream &in, LightController &lightController) {
-    return in;
+  sleep_ms(10000);
 }

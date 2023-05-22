@@ -5,7 +5,6 @@
 #ifndef HYDROPONIC_SUITE_ANALOGOUTPUT_H
 #define HYDROPONIC_SUITE_ANALOGOUTPUT_H
 
-#include "../controller.h"
 #include "IO.h"
 
 class AnalogOutput : public IO {
