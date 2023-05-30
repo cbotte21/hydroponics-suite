@@ -25,13 +25,16 @@
  *          - Sleep
  */
 
-const uint SECONDS_TO_MS = 1000;
-const double secondsForQuart = 20;
+const double quartsPerHour = 8;
+const double minutesForQuart = 60 / quartsPerHour;
+const double secondsForQuart = 60 * minutesForQuart;
+
+const uint LIGHTS_HOURS_HIGH = 12;
 
 void lightManagerCore() {
     LightController lightController;
     while (true) {
-      lightController.tick();
+      lightController.cycle(LIGHTS_HOURS_HIGH);
     }
 }
 

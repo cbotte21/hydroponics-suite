@@ -13,33 +13,27 @@
 
 using std::string;
 
-class Plant {
+class PlantCluster {
   string uuid;
-  string name;
   uint started;  // Timestamp
   double quartsDaily;
 
  public:
   // Load plant
-  Plant(string uuid, string name, uint started, double quartsDaily) : Plant(std::move(name), quartsDaily) {
+  PlantCluster(string uuid, uint started, double quartsDaily) : PlantCluster(quartsDaily) {
     this->uuid = std::move(uuid);
     this->started = started;
   }
 
   // Initialize plant
-  Plant(string name, double quartsDaily) {
+  explicit PlantCluster(double quartsDaily) {
     uuid = "random uuid";
-    this->name = std::move(name);
     this->started = 100;  // TODO: Populate with current time
     this->quartsDaily = quartsDaily;
   }
 
   [[nodiscard]] inline double getQuartsDaily() const {
     return quartsDaily;
-  }
-
-  [[nodiscard]] inline string getName() const {
-    return name;
   }
 
   [[nodiscard]] inline string getId() const {

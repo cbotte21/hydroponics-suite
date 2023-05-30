@@ -11,7 +11,7 @@ if (TARGET tinyusb_device)
             io/LightController.cpp
             io/ValveController.h
             internal/CycleCalculator.cpp
-            internal/Plant.h
+            internal/PlantCluster.h
             internal/IrrigationManager.cpp
             )
 
