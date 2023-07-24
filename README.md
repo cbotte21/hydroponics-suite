@@ -1,5 +1,5 @@
 # hydroponics-suite
-An automated hydroponics microcontroller.
+Microcontroller code for an automated hydroponic controller.
 
 # What is this project?
 At first this project started as a variable water emitter for multiple crops. With the plans of controlling each crop with a solenoid. Once I realized that this was far from economically viable, the plans shifted a little.
